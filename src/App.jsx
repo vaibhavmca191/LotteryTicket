@@ -5,16 +5,17 @@ import './App.css'
 import Lottery from './component/Lottery'
 import TicketNum from './component/TicketNum'
 import Ticket from './component/Ticket'
-
+import { sum } from './component/helper'
 
 function App() {
- let col = () =>{
+ let winCondition = (ticket) =>{
+  return ticket[0] === 1;
 
  }
 
   return (
     <>
-<Lottery n={3} winningSum={15}/>
+<Lottery n={3}  winCondition = {winCondition}/>
     </>
   )
 }
